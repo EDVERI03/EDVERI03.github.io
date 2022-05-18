@@ -3,7 +3,7 @@
 
     let name = "the rock";
     let imageURL = "https://upload.wikimedia.org/wikipedia/commons/3/32/WWF_RAW_2001-10-15_The_Rock_at_ringside.jpg"; 
-    let colorDeg = 180 
+    let colorDeg = Math.floor(Math.random() * (360 + 1))
 
     //For real-time dynamic repositioning of elements  
     let posX = 40
