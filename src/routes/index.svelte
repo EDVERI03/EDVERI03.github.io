@@ -9,5 +9,6 @@ import Investigate from "$lib/components/investigate.svelte";
     <Investigate></Investigate>
     <Card/>
     <Card/>
+    <Card/>
     
 </main>
