@@ -24,8 +24,6 @@ draggable="true"
 style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg);" 
 on:mousedown="{() => {follow = true}}" 
 on:dragstart|preventDefault="{() => {return false;}}"
-on:dragend|preventDefault="{() => {return false;}}"
-on:drag="{() => {return null;}}"
 on:mouseup="{() => {follow = false}}"
 on:mouseleave="{() => {follow = false}}"
 on:mousemove="{HandleMovement}"/>
