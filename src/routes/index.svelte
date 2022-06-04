@@ -6,9 +6,8 @@ import Investigate from "$lib/components/investigate.svelte";
 </script>
 
 <main class="bg-slate-400 w-screen h-screen overflow-hidden">
-    <Investigate></Investigate>
+    <Investigate/>
     <Card/>
     <Card/>
     <Card/>
-    
 </main>
