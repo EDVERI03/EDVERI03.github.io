@@ -1,4 +1,5 @@
 <script id="appendable">
+    import { popupActive } from "$lib/stores/data";
     //For displaying card-specific information
 
     let name = "the rock";
@@ -53,6 +54,11 @@
             board.appendChild(this);
         }
     } 
+
+    function DisplayData() {
+        $popupActive = true;
+    }
+
 </script>
 
 <div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl hover:z-index-10 bg-cover" 
@@ -63,5 +69,5 @@ on:dragstart|preventDefault="{() => {return false;}}"
 on:mouseup="{HandleDrop}"
 on:mouseleave="{() => {follow = false}}"
 on:mousemove="{HandleMovement}"
-on:contextmenu|preventDefault="{() => {console.log("works")}}"
+on:contextmenu|preventDefault="{DisplayData}"
 />

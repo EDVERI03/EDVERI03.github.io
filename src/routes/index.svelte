@@ -2,6 +2,7 @@
 import Card from "$lib/components/card.svelte";
 import Investigate from "$lib/components/investigate.svelte";
 import Popup from "$lib/components/popup.svelte";
+import { popupActive } from "$lib/stores/data";
 
 
 </script>
@@ -11,5 +12,7 @@ import Popup from "$lib/components/popup.svelte";
     <Card/>
     <Card/>
     <Card/>
+    {#if $popupActive}
     <Popup/>
+    {/if}
 </main>

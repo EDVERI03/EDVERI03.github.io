@@ -1,10 +1,10 @@
 <script>
-
+import { popupActive } from "$lib/stores/data";
 </script>
 
 <div id="PUoverlay" class="fixed w-screen h-screen" style="background-color: rgba(0,0,0,0.5);">
-    <div id="PUwindow" class="absolute inset-1/4 bg-white rounded-xl w-1/2 h-1/2" on:click="{() => {console.log("a")}}">
-        <button class="absolute top-3 right-3 hover:bg-slate-100 rounded-full p-2"> 
+    <div id="PUwindow" class="absolute inset-1/4 bg-white rounded-xl w-1/2 h-1/2">
+        <button class="absolute top-3 right-3 hover:bg-slate-100 rounded-full p-2" on:click="{() => {$popupActive = false}}"> 
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                 <path class="stroke-slate-400 stroke-2" d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/>
             </svg>
