@@ -13,9 +13,6 @@
 
     let follow = false;
 
-    
-    
-
     function HandleMovement(event) {
         const cardRect = this.getBoundingClientRect();
         //Move element
@@ -27,14 +24,13 @@
         
     }
 
-    function HandleDrop(event) {
+    function HandleDrop() {
         const cardRect = this.getBoundingClientRect();
         const cardCenter = {"x": (cardRect.x + cardRect.width / 2), "y": (cardRect.y + cardRect.height / 2)}
         follow = false
 
         //For putting card in slot (if possible)
-        let Slots = document.querySelectorAll("#card-slot"); 
-        console.log(Slots)
+        const Slots = document.querySelectorAll("#card-slot"); 
         Slots.forEach((slot) => {
             //Check if card slot is available (empty)
             if (slot.childElementCount == 0) {
@@ -42,12 +38,23 @@
                 const slotRect = slot.getBoundingClientRect();
                 if (slotRect.left < cardCenter.x && slotRect.right > cardCenter.x && slotRect.top < cardCenter.y && slotRect.bottom > cardCenter.y) {
                     //append card into slot
-                    position = "inherit"
+                    position = "inherit";
                     slot.appendChild(this);
-                    console.log("you did it")
                 }
             }
         }) 
+
+    }
+
+    function HandleLift() {
+        follow = true
+
+        //if card is in slot, free it
+        if (this.parentElement.getAttribute("id") == "card-slot") {
+            const board = document.querySelector("#board");
+            position = "absolute";
+            board.appendChild(this);
+        }
 
     }
     
@@ -56,9 +63,10 @@
 <div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl hover:z-index-10 bg-cover" 
 draggable="true"
 style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg); position:{position};" 
-on:mousedown="{() => {follow = true}}" 
+on:mousedown="{HandleLift}" 
 on:dragstart|preventDefault="{() => {return false;}}"
 on:mouseup="{HandleDrop}"
 on:mouseleave="{() => {follow = false}}"
 on:mousemove="{HandleMovement}"
+on:contextmenu|preventDefault="{() => {console.log("works")}}"
 />
