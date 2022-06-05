@@ -1,6 +1,7 @@
 <script>
 import Card from "$lib/components/card.svelte";
 import Investigate from "$lib/components/investigate.svelte";
+import Popup from "$lib/components/popup.svelte";
 
 
 </script>
@@ -10,4 +11,5 @@ import Investigate from "$lib/components/investigate.svelte";
     <Card/>
     <Card/>
     <Card/>
+    <Popup/>
 </main>

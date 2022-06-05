@@ -20,8 +20,6 @@
             posX = event.clientX - cardRect.width/2;
             posY = event.clientY - cardRect.height/2;
         }
-
-        
     }
 
     function HandleDrop() {
@@ -43,7 +41,6 @@
                 }
             }
         }) 
-
     }
 
     function HandleLift() {
@@ -55,9 +52,7 @@
             position = "absolute";
             board.appendChild(this);
         }
-
-    }
-    
+    } 
 </script>
 
 <div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl hover:z-index-10 bg-cover" 
