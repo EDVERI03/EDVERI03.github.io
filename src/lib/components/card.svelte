@@ -48,11 +48,9 @@
         follow = true
 
         //if card is in slot, free it
-        if (this.parentElement.getAttribute("id") == "card-slot") {
-            const board = document.querySelector("#board");
-            position = "absolute";
-            board.appendChild(this);
-        }
+        const board = document.querySelector("#board");
+        position = "absolute";
+        board.appendChild(this);
     } 
 
     function DisplayData() {
