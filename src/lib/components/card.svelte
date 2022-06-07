@@ -60,10 +60,8 @@
 </script>
 
 <div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl hover:z-index-10 bg-cover" 
-draggable="true"
 style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg); position:{position};" 
 on:mousedown="{HandleLift}" 
-on:dragstart|preventDefault="{() => {return false;}}"
 on:mouseup="{HandleDrop}"
 on:mouseleave="{() => {follow = false}}"
 on:mousemove="{HandleMovement}"

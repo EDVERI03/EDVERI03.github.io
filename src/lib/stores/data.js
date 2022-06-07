@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const popupActive = writable(true)
+export const popupActive = writable(false)
