@@ -3,7 +3,7 @@
     //For displaying card-specific information
 
     let name = "the rock";
-    let imageURL = "https://upload.wikimedia.org/wikipedia/commons/3/32/WWF_RAW_2001-10-15_The_Rock_at_ringside.jpg"; 
+    let imageURL = "src/lib/assets/Portrait2.png"; 
     let colorDeg = Math.floor(Math.random() * (360 + 1))
 
     //For real-time dynamic repositioning of elements  
@@ -19,7 +19,7 @@
         //Move element
         if (follow) {
             posX = event.clientX - cardRect.width/2;
-            posY = event.clientY - cardRect.height/2;
+            posY = event.clientY - cardRect.height/2 -40;
         }
     }
 
@@ -59,7 +59,7 @@
 
 </script>
 
-<div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl hover:z-index-10 bg-cover" 
+<div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl bg-cover" 
 style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg); position:{position};" 
 on:mousedown="{HandleLift}" 
 on:mouseup="{HandleDrop}"
