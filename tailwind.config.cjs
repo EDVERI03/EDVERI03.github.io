@@ -2,9 +2,6 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
-      lineHeight: {
-        '11' : '2.7rem',
-      }
     },
   },
   plugins: [require("daisyui")],

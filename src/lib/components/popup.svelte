@@ -1,14 +1,13 @@
 <script>
-import { popupActive } from "$lib/stores/data";
+import { popupActive, icon, description, name, color } from "$lib/stores/data";
 
-    let text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis quam, sodales quis lectus ut, porta condimentum ipsum. 
-    Nulla pulvinar augue sit amet venenatis ornare. Sed nibh magna, iaculis a odio sit amet, rhoncus ultricies erat. Aliquam hendrerit egestas mi at porta.
-     Etiam iaculis eros non posuere semper. Vestibulum porttitor efficitur lacus, ac gravida nunc congue non. Nam mollis eget nulla id semper. Cras et maximus orci. 
-     Sed congue luctus felis et aliquam. Vivamus tempor diam nec eros facilisis, in suscipit eros mollis. Mauris ipsum sapien,
-      efficitur mattis venenatis eget, tristique ac magna. Nulla facilisi. Phasellus ultricies euismod leo vel finibus. Proin convallis consequat nulla a maximus.
-       Morbi at ante lectus. Curabitur est nibh, maximus tincidunt urna a, bibendum gravida leo.`
-
-       let imgsrc = "src/lib/assets/Portrait2.png"
+    const text = $description;
+    const imgsrc = $icon;
+    const header = $name;
+    
+    function updateDisplayInfo() {
+        
+    }
 </script>
 
 <div id="PUoverlay" class="fixed w-screen h-screen" style="background-color: rgba(0,0,0,0.5);">
@@ -19,11 +18,11 @@ import { popupActive } from "$lib/stores/data";
             </svg>
         </button>
         <div id="textbox" class="m-8">
-            <h1 class="font-bold uppercase text-2xl text-slate-400">This is a header</h1>
+            <h1 class="font-bold uppercase text-2xl text-slate-400">{header}</h1>
             <hr class="border-t-4 border-dashed border-slate-400">
             <div class="flex mt-6">
                 <p style="width: -webkit-fill-available;">{text}</p>
-                <img src="{imgsrc}" alt="card" class="w-48 h-64 rounded-lg float-right ml-4">
+                <img src="{imgsrc}" alt="card" class="w-48 h-64 rounded-lg float-right ml-4" style="filter: hue-rotate({$color}deg);">
             </div>
         </div>
     </div>

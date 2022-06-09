@@ -1,16 +1,18 @@
 <script id="appendable">
-    import { popupActive } from "$lib/stores/data";
+    import { popupActive, name, description, icon, color } from "$lib/stores/data";
     //For displaying card-specific information
 
-    let name = "the rock";
-    let imageURL = "src/lib/assets/Portrait2.png"; 
+    export let cardName ="fellow";
+    export let imageURL =""; 
+    export let cardDescription ="exists...";
     let colorDeg = Math.floor(Math.random() * (360 + 1))
 
     //For real-time dynamic repositioning of elements  
     let posX = 40;
-    let posY = 40;
+    export let posY = 40;
 
     let position = "absolute"
+    let transition = "unset"
 
     let follow = false;
 
@@ -23,7 +25,7 @@
         }
     }
 
-    function HandleDrop() {
+    function HandleDrop(duration) {
         const cardRect = this.getBoundingClientRect();
         const cardCenter = {"x": (cardRect.x + cardRect.width / 2), "y": (cardRect.y + cardRect.height / 2)}
         follow = false
@@ -37,8 +39,17 @@
                 const slotRect = slot.getBoundingClientRect();
                 if (slotRect.left < cardCenter.x && slotRect.right > cardCenter.x && slotRect.top < cardCenter.y && slotRect.bottom > cardCenter.y) {
                     //append card into slot
-                    position = "inherit";
-                    slot.appendChild(this);
+                    //animate card going into slot
+                    const barRect = document.getElementById("navBar").getBoundingClientRect()
+                    transition = `top 0.2s, left 0.2s`;
+                    posX = slotRect.x + 4;
+                    posY = slotRect.y - barRect.height + 4;
+                    
+                    setTimeout(() => {
+                        position = "inherit";
+                        slot.appendChild(this);
+                        transition = "unset"
+                    }, 200);
                 }
             }
         }) 
@@ -54,13 +65,16 @@
     } 
 
     function DisplayData() {
+        $name = cardName;
+        $icon = imageURL;
+        $description = cardDescription;
+        $color = colorDeg;
         $popupActive = true;
     }
-
 </script>
 
 <div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl bg-cover" 
-style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg); position:{position};" 
+style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg); position:{position}; transition: {transition};" 
 on:mousedown="{HandleLift}" 
 on:mouseup="{HandleDrop}"
 on:mouseleave="{() => {follow = false}}"

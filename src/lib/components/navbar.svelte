@@ -1,11 +1,20 @@
 <script>
+    let screenWidth;
 
+    function updateWidth() {
+        screenWidth = this.getBoundingClientRect().width;
+    }
 </script>
 
-<div class="w-full h-[7%] bg-slate-500 sticky top-0 flex">
+
+<div class="w-full h-[7%] bg-slate-500 sticky top-0 flex" id="navBar">
+    
     <a class="px-4 rounded-lg bg-slate-500 text-white uppercase h-2/3 self-center ml-10 font-bold hover:bg-slate-600 leading-11" href="/"> Home </a>
     <a class="px-4 rounded-lg bg-slate-500 text-white uppercase h-2/3 self-center ml-10 font-bold hover:bg-slate-600 leading-11" href="/Board"> Board </a>
     <a class="px-4 rounded-lg bg-slate-500 text-white uppercase h-2/3 self-center ml-10 font-bold hover:bg-slate-600 leading-11" href="/Instructions"> Instructions </a>
+    
+
+    
 
     <a class="absolute top-3 right-3 hover:bg-slate-600 rounded-full p-2" href="https://github.com/EDVERI03/EDVERI03.github.io"> 
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
