@@ -2,13 +2,13 @@
     import { popupActive, name, description, icon, color } from "$lib/stores/data";
     //For displaying card-specific information
 
-    export let cardName ="fellow";
-    export let imageURL =""; 
+    export let cardName = "fellow";
+    export let imageURL = ""; 
     export let cardDescription ="exists...";
-    let colorDeg = Math.floor(Math.random() * (360 + 1))
+    export let colorDeg = "90"
 
     //For real-time dynamic repositioning of elements  
-    let posX = 40;
+    export let posX = 40;
     export let posY = 40;
 
     let position = "absolute"
@@ -64,7 +64,7 @@
         board.appendChild(this);
     } 
 
-    function DisplayData() {
+    export function DisplayData() {
         $name = cardName;
         $icon = imageURL;
         $description = cardDescription;
@@ -73,7 +73,7 @@
     }
 </script>
 
-<div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl bg-cover" 
+<div class="w-48 h-64 bg-white rounded-lg hover:drop-shadow-xl bg-cover" id="{cardName}" 
 style="left: {posX}px; top: {posY}px; background-image: url({imageURL}); filter: hue-rotate({colorDeg}deg); position:{position}; transition: {transition};" 
 on:mousedown="{HandleLift}" 
 on:mouseup="{HandleDrop}"
