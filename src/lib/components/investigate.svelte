@@ -40,15 +40,19 @@
 </script>
 
 <div
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
-    id="investigateBox"
->
-    <p class="text-white font-bold uppercase select-none">interrogate</p>
-    <CardSlot />
-    <p class="text-white font-bold uppercase select-none">about</p>
-    <CardSlot />
-    <button
-        class="px-4 py-2 rounded-lg bg-slate-500 text-white uppercase self-center font-bold hover:bg-slate-600 mt-4 select-none"
-        on:click={handleClick}>Investigate</button
-    >
+    class="text-center rounded-lg border-dashed border-4 border-color-white p-10"
+    id="investigateBox">
+        <div class="flex gap-10">
+            <div>
+                <p class="text-white font-bold uppercase select-none">interrogate</p>
+                <CardSlot />
+            </div>
+            <div>
+                <p class="text-white font-bold uppercase select-none">about</p>
+                <CardSlot />
+            </div>
+        </div>
+        <button
+            class="px-4 py-2 rounded-lg bg-slate-500 text-white uppercase self-center font-bold hover:bg-slate-600 mt-4 select-none"
+            on:click={handleClick}>Investigate</button>
 </div>

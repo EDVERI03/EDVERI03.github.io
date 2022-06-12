@@ -4,13 +4,9 @@ import { popupActive, icon, description, name, color } from "$lib/stores/data";
     const text = $description;
     const imgsrc = $icon;
     const header = $name;
-    
-    function updateDisplayInfo() {
-        
-    }
 </script>
 
-<div id="PUoverlay" class="fixed w-screen h-screen" style="background-color: rgba(0,0,0,0.5);">
+<div id="PUoverlay" class="fixed w-screen h-screen z-30" style="background-color: rgba(0,0,0,0.5);">
     <div id="PUwindow" class="absolute inset-1/4 bg-white rounded-xl w-1/2 min-h-[50%] h-fit">
         <button class="absolute top-3 right-3 hover:bg-slate-100 rounded-full p-2" on:click="{() => {$popupActive = false}}"> 
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
