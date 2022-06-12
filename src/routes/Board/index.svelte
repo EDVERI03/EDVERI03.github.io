@@ -9,7 +9,7 @@ import { cards } from "$lib/data/cards";
 <div class="bg-slate-400 w-full h-[93%] overflow-hidden relative" id="board">
     <Investigate/>
     {#each cards as card}
-        <Card cardName="{card.name}" imageURL="{card.icon}" cardDescription="{card.description}" posY="{100 + 266 * card.column}" posX="{40 + 202 * card.row}" colorDeg="{card.color}"/>
+        <Card cardName="{card.name}" imageURL="{card.icon}" cardDescription="{card.description}" posY="{100 + 266 * card.column}" posX="{40 + 202 * card.row}" colorDeg="{card.color.toString()}"/>
     {/each}
     {#if $popupActive}
     <Popup/>
