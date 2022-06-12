@@ -1,7 +1,7 @@
 <div class="bg-slate-200 w-3/4 m-auto flex flex-col items-center text-center min-h-[93%]">
     <h1 class="my-6 font-bold uppercase text-2xl text-slate-500">Murder mystery</h1>
     <hr class="border-t-4 border-dashed border-slate-100 w-full">
-    <p class="m-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ultricies ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed a ante eget tortor euismod scelerisque. Quisque ac cursus lacus, eget tempor lacus. Ut ac convallis dolor. Suspendisse vel dui eu libero ullamcorper consectetur eu et lacus. Nullam finibus ante sit amet luctus commodo. Nullam condimentum, elit sit amet laoreet porta, erat mi euismod orci, a tincidunt metus felis sed nisi. Etiam vel finibus velit. Fusce id odio a metus posuere ullamcorper. Donec quis dui ut tortor ullamcorper tristique vel id est.</p>
+    <p class="m-6">Someone has died in the Graymound hospital, which does happen but not like this. This person was murdured. After a few hours of work you, the investigator of this case, has narrowed down the possible suspects to only three people. One of these people must be the killer, it is your job to find out who did it. <br> The game is only playable with a mouse or trackpad (touchcontrols does not work), you can read how the game works in the instructions tab or start the game which is in the board tab.</p>
     <div class="mx-10 rounded-lg bg-slate-400 flex flex-none place-content-center w-fit overflow-x-scroll scrollable" >
         <img alt="card1" src="Portrait1.png" class="w-48 h-64 bg-white rounded-lg m-6 hue-rotate-90">
         <img alt="card2" src="Portrait2.png" class="w-48 h-64 bg-white rounded-lg my-6">
